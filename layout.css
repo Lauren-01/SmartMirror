@@ -5,4 +5,7 @@ body {
 #clock {
     color: white;
     font-size: 60px;
+    float: right;
+    margin: 10px;
+    margin-right: 20px;
 }
