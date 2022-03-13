@@ -1,4 +1,10 @@
-function showTime() {
+var kloksoort = 1;
+var interval;
+
+
+function showTimeSeconds() {
+    clearInterval(interval);
+
     const today = new Date();
     var hours = today.getHours();
     var minutes = today.getMinutes();
@@ -10,7 +16,22 @@ function showTime() {
 
     document.getElementById('clock').innerHTML = hours + ":" + minutes + ":" + seconds;
     
-    setTimeout(showTime, 1000);
+    interval = setTimeout(showTimeSeconds, 1000);
+}
+
+function showTime() {
+    clearInterval(interval);
+
+    const today = new Date();
+    var hours = today.getHours();
+    var minutes = today.getMinutes();
+
+    hours = check(hours);
+    minutes = check(minutes);
+
+    document.getElementById('clock').innerHTML = hours + ":" + minutes;
+    
+    interval = setTimeout(showTime, 1000);
 }
 
 function check(input) {                 // voegt een 0 toe zodat de klok er altijd als "hh:mm:ss" uitziet
@@ -21,4 +42,19 @@ function check(input) {                 // voegt een 0 toe zodat de klok er alti
     return input;
 }
 
-showTime();
+function SwitchBetweenClocks() {
+    switch(kloksoort)
+    {
+        case 1:
+            showTimeSeconds();
+            kloksoort = 2;
+            break;
+        case 2:
+            showTime();
+            kloksoort = 1;
+            break;
+        default:
+            alert("Error with clock!");
+            break;
+    }
+}
