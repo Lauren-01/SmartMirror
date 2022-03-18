@@ -1,11 +1,78 @@
 body {
     background-color: black;
+    padding-right: 15%;
 }
 
 #clock {
     color: white;
     font-size: 60px;
+    text-align: left;
     float: right;
     margin: 10px;
     margin-right: 20px;
+
+    position: relative;
+    white-space: nowrap;
+
+    width: 150px;
+    height: 150px;
 }
+
+/*------------------------------------------------------------------*/
+/* BEGIN VAN DE KLOK FUNCTIE */
+/*------------------------------------------------------------------*/
+
+#clock2 {
+    background-color: black;
+    font-size: 60px;
+    text-align: left;
+    float: right;
+    margin: 10px;
+    margin-right: 20px;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+#hour {
+    position: absolute;
+    background: white;
+    border-radius: 10px;
+    transform-origin: bottom;
+    width: 1.8%;
+    height: 30%;
+    top: 20%;
+    left: 49%;
+    opacity: 0.8;
+}
+
+#minute {
+    position: absolute;
+    background: white;
+    border-radius: 10px;
+    transform-origin: bottom;
+    width: 1.5%;
+    height: 38%;
+    top: 12%;
+    left: 49%;
+    opacity: 0.8;
+}
+
+#second {
+    position: absolute;
+    background: white;
+    border-radius: 10px;
+    transform-origin: bottom;
+    width: 1%;
+    height: 46%;
+    top: 4%;
+    left: 49%;
+    opacity: 0.8;
+}
+
+/*------------------------------------------------------------------*/
+/* EINDE VAN DE KLOK FUNCTIE */
+/*------------------------------------------------------------------*/
