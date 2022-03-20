@@ -3,38 +3,40 @@ body {
     padding-right: 15%;
 }
 
-#clock {
+#rechtsboven {
     color: white;
-    font-size: 60px;
-    text-align: left;
+
     float: right;
     margin: 10px;
     margin-right: 20px;
-
-    position: relative;
-    white-space: nowrap;
-
+   
     width: 150px;
-    height: 150px;
 }
+
+/*-----------------------------------------------------------------*/
+/* BEGIN VAN DE DATUM FUNCTIE */
+/*-----------------------------------------------------------------*/
+
+#date {
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+/*-----------------------------------------------------------------*/
+/* EINDE VAN DE DATUM FUNCTIE */
+/*-----------------------------------------------------------------*/
 
 /*------------------------------------------------------------------*/
 /* BEGIN VAN DE KLOK FUNCTIE */
 /*------------------------------------------------------------------*/
 
-#clock2 {
-    background-color: black;
+#clock {
     font-size: 60px;
-    text-align: left;
-    float: right;
-    margin: 10px;
-    margin-right: 20px;
-    width: 150px;
-    height: 150px;
+
     position: relative;
-    
-    border: 2px solid white;
-    border-radius: 50%;
+    white-space: nowrap;
+
+    height: 150px;
 }
 
 #hour {
