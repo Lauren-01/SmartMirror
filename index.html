@@ -5,12 +5,16 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="layout.css">
     </head>
-    <body onload="SwitchBetweenClocks()">
-        <div onclick="SwitchBetweenClocks()" id="clock">
-            <div id="hour"></div>
-            <div id="minute"></div>
-            <div id="second"></div>
+    <body onload="SwitchBetweenClocks(), getDate()">
+        <div id="rechtsboven">
+            <div id="date"></div>
+            <div onclick="SwitchBetweenClocks()" id="clock">
+                <div id="hour"></div>
+                <div id="minute"></div>
+                <div id="second"></div>
+            </div>
         </div>
         <script type="text/javascript" src="modules/Clock/Clock.js"></script>
+        <script type="text/javascript" src="modules/Date/Date.js"></script>
     </body>
 </html>
