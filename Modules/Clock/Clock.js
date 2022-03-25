@@ -49,7 +49,6 @@ function showTimeAMPM() {
         if (hours == 12) 
         {
             hours = check(hours);
-            minutes = check(minutes);
             document.getElementById('clock').innerHTML = hours + ":" + minutes + " PM";
         }
         else
