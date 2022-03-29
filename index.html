@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="layout.css">
     </head>
     <body onload="SwitchBetweenClocks(), getDate()">
+        
         <div id="rechtsboven">
             <div id="date"></div>
             <div onclick="SwitchBetweenClocks()" id="clock">
@@ -14,7 +15,21 @@
                 <div id="second"></div>
             </div>
         </div>
+        
+        
+        <div id="rechtsmidden">
+            <img src="./Images/StopwatchPhoto.png" id="iconStopwatch" onclick="OpenStopwatch()"></img>         <!-- Bij het klikken zal de stopwatch verschijnen of verdwijnen-->
+            <div id="stopw">
+                <div id="stopwatch"> 00:00:00 </div> 
+                <ul id="stopwatchButtons">
+                    <li><button id="StartStop" onclick="StartStopwatch()">Start</button></li>
+                    <li><button onclick="ResetStopwatch()">Reset</button></li>
+                </ul>
+            </div>
+        </div>
+    
         <script type="text/javascript" src="modules/Clock/Clock.js"></script>
         <script type="text/javascript" src="modules/Date/Date.js"></script>
+        <script type="text/javascript" src="modules/Stopwatch/Stopwatch.js"></script>
     </body>
 </html>
