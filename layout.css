@@ -17,7 +17,7 @@ body {
     color: white;
 
     padding-right: 10%;
-    padding-top: 5%;
+    padding-top: 4%;
 
     clear: both;            /* Zorgt ervoor dat de box rechts onder de bovenstaande komt, clear de float*/
     float: right;
