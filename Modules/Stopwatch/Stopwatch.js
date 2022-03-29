@@ -16,6 +16,7 @@ function OpenStopwatch() {
     {
         iconStopw = 0;
         document.getElementById('stopw').style.visibility = "hidden";
+        ResetStopwatch();
     }
 }
 
