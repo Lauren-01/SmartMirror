@@ -1,11 +1,25 @@
 body {
     background-color: black;
-    padding-right: 15%;
 }
 
 #rechtsboven {
     color: white;
 
+    padding-right: 10%;
+    float: right;
+    margin: 10px;
+    margin-right: 20px;
+   
+    width: 150px;
+}
+
+#rechtsmidden {
+    color: white;
+
+    padding-right: 10%;
+    padding-top: 5%;
+
+    clear: both;            /* Zorgt ervoor dat de box rechts onder de bovenstaande komt, clear de float*/
     float: right;
     margin: 10px;
     margin-right: 20px;
@@ -41,40 +55,96 @@ body {
 
 #hour {
     position: absolute;
-    background: white;
     border-radius: 10px;
     transform-origin: bottom;
+    background: white;
+    
     width: 1.8%;
     height: 30%;
     top: 20%;
     left: 49%;
+    
     opacity: 0.8;
 }
 
 #minute {
     position: absolute;
-    background: white;
     border-radius: 10px;
     transform-origin: bottom;
+    background: white;
+    
     width: 1.5%;
     height: 38%;
     top: 12%;
     left: 49%;
+    
     opacity: 0.8;
 }
 
 #second {
     position: absolute;
-    background: white;
     border-radius: 10px;
     transform-origin: bottom;
+    background: white;
+    
     width: 1%;
     height: 46%;
     top: 4%;
     left: 49%;
+    
     opacity: 0.8;
 }
 
 /*------------------------------------------------------------------*/
 /* EINDE VAN DE KLOK FUNCTIE */
+/*------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------*/
+/* BEGIN VAN DE STOPWATCH FUNCTIE */
+/*------------------------------------------------------------------*/
+
+
+#stopw {
+    visibility: hidden;
+}
+
+#iconStopwatch {
+    width: 50px;
+    height: 50px;
+
+    margin-bottom: 10%;
+}
+
+#stopwatch {
+    font-size: 50px;
+
+    position: relative;
+    white-space: nowrap;
+}
+
+button {
+    width: 90%;
+    margin-right: 10%;
+
+    background-color: black;
+    color: white;
+
+    border: 2px solid white;
+    border-radius: 10%;
+}
+
+li {                        /* Zorgt ervoor dat de knoppen naast elkaar staan en een vaste breedte hebben */
+    display: block;
+    width: 50%;
+    float: left;
+}
+
+ul {                        /* Zorgt ervoor dat de knoppen net onder de cijfers staan zonder rare uitlijning */
+    padding: 0;
+    margin: 0;
+    padding-left: 20%;
+}
+
+/*------------------------------------------------------------------*/
+/* EINDE VAN DE STOPWATCH FUNCTIE */
 /*------------------------------------------------------------------*/
