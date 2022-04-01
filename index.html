@@ -19,6 +19,7 @@
         
         <div id="rechtsmidden">
             <img src="./Images/StopwatchPhoto.png" id="iconStopwatch" onclick="OpenStopwatch()"></img>         <!-- Bij het klikken zal de stopwatch verschijnen of verdwijnen-->
+            
             <div id="stopw">
                 <div id="stopwatch"> 00:00:00 </div> 
                 <ul id="stopwatchButtons">
@@ -26,10 +27,39 @@
                     <li><button onclick="ResetStopwatch()">Reset</button></li>
                 </ul>
             </div>
+        
+            <div id="tmr">
+                <div id="arrowsup">
+                    <img src="./Images/arrowup.png" id="addTenH" onclick="AddTenHour()"></img>
+                    <img src="./Images/arrowup.png" id="addOneH" onclick="AddOneHour()"></img>
+                    <span>&emsp;</span>
+                    <img src="./Images/arrowup.png" id="addTenM" onclick="AddTenMinute()"></img>
+                    <img src="./Images/arrowup.png" id="addOneM" onclick="AddOneMinute()"></img>
+                    <span>&emsp;</span>
+                    <img src="./Images/arrowup.png" id="addTenS" onclick="AddTenSecond()"></img>
+                    <img src="./Images/arrowup.png" id="addOneS" onclick="AddOneSecond()"></img>
+                </div>
+                <div id="timer"> 00:00:00 </div> 
+                <div id="arrowsdown">
+                    <img src="./Images/arrowup.png" id="removeTenH" onclick="RemoveTenHour()"></img>
+                    <img src="./Images/arrowup.png" id="removeOneH" onclick="RemoveOneHour()"></img>
+                    <span>&emsp;</span>
+                    <img src="./Images/arrowup.png" id="removeTenM" onclick="RemoveTenMinute()"></img>
+                    <img src="./Images/arrowup.png" id="removeOneM" onclick="RemoveOneMinute()"></img>
+                    <span>&emsp;</span>
+                    <img src="./Images/arrowup.png" id="removeTenS" onclick="RemoveTenSecond()"></img>
+                    <img src="./Images/arrowup.png" id="removeOneS" onclick="RemoveOneSecond()"></img>
+                </div>
+                <ul id="timerButtons">
+                    <li id="tmrbuttons"><button onclick="StartTimer()">Start</button></li>
+                    <li id="tmrbuttons"><button onclick="ResetTimer()">Reset</button></li>
+                </ul>
+            </div>
         </div>
     
         <script type="text/javascript" src="modules/Clock/Clock.js"></script>
         <script type="text/javascript" src="modules/Date/Date.js"></script>
         <script type="text/javascript" src="modules/Stopwatch/Stopwatch.js"></script>
+        <script type="text/javascript" src="modules/Timer/Timer.js"></script>
     </body>
 </html>
