@@ -194,7 +194,7 @@ function RemoveOneMinute() {
         RemoveTenM.style.opacity = "1";
     }
 
-    if (minute < 59) {
+    if (minute < 50) {
         AddTenM.style.opacity = "1";
     }
 
@@ -277,7 +277,7 @@ function RemoveOneSecond() {
         RemoveTenS.style.opacity = "1";
     }
 
-    if (second < 59) {
+    if (second < 50) {
         AddTenS.style.opacity = "1";
     }
 
@@ -322,6 +322,10 @@ function StartTimer() {
     second--;
 
     if (second < 0) {
+        if (hour > 0) {
+            minute = 59;
+            hour--;
+        }
         if (minute > 0) {
             second = 59;
             minute--;                
@@ -330,6 +334,8 @@ function StartTimer() {
             hour = 0;
             second = 0;
             minute = 0;
+            ResetTimer();
+            console.log("000");
         }
     }
 
