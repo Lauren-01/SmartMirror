@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="layout.css">
     </head>
     <body onload="SwitchBetweenClocks(), getDate()">
-        
+
         <div id="rechtsboven">
             <div id="date"></div>
             <div onclick="SwitchBetweenClocks()" id="clock">
@@ -15,19 +15,20 @@
                 <div id="second"></div>
             </div>
         </div>
-        
-        
+
+
         <div id="rechtsmidden">
-            <img src="./Images/StopwatchPhoto.png" id="iconStopwatch" onclick="OpenStopwatch()"></img>         <!-- Bij het klikken zal de stopwatch verschijnen of verdwijnen-->
+            <img src="./Images/StopwatchPhoto.png" id="icon" onclick="OpenStopwatch()"></img>       <!-- Bij het klikken zal de stopwatch verschijnen of verdwijnen-->
+            <img src="./Images/Timer.png" id="icon" onclick="OpenTimer()"></img>                    <!-- Bij het klikken zal de stopwatch verschijnen of verdwijnen-->
             
             <div id="stopw">
                 <div id="stopwatch"> 00:00:00 </div> 
                 <ul id="stopwatchButtons">
-                    <li><button id="StartStop" onclick="StartStopwatch()">Start</button></li>
-                    <li><button onclick="ResetStopwatch()">Reset</button></li>
+                    <li id="stopwbuttons"><button id="StartStop" onclick="StartStopwatch()">Start</button></li>
+                    <li id="stopwbuttons"><button onclick="ResetStopwatch()">Reset</button></li>
                 </ul>
             </div>
-        
+
             <div id="tmr">
                 <div id="arrowsup">
                     <img src="./Images/arrowup.png" id="addTenH" onclick="AddTenHour()"></img>
@@ -56,10 +57,91 @@
                 </ul>
             </div>
         </div>
-    
+
+
+        <div id="linksonder">
+            <div class="Todo">
+                <div id="todolijst" class="header">
+                    <h2>To Do Lijst</h2> 
+                <!--placeholder en button -->
+                    <input type="text" id="Input" placeholder="......." onfocus="showKeyboard()">
+                    <button onclick="nieuwItem()" class="addBtn">+</button>
+                </div>
+            </div>
+            <!--lijst items van todo-lijst -->
+            <div class="ItemsTodo">
+                <ul id="Lijst"></ul>
+            </div>
+        </div>
+
+
+        <div id="centraalonder">
+            <table id="keyboard">
+                <tr>
+                    <td><input type="button" value="1" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="2" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="3" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="4" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="5" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="6" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="7" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="8" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="9" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="0" onclick="InputKeys(this)"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="a" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="z" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="e" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="r" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="t" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="y" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="u" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="i" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="o" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="p" class="Kleineletter" onclick="InputKeys(this)"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="q" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="s" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="d" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="f" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="g" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="h" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="j" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="k" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="l" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="m" class="Kleineletter" onclick="InputKeys(this)"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="w" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="x" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="c" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="v" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="b" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="n" class="Kleineletter" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="." id="punt" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="!" id="uitroepteken" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="?" id="vraagteken" onclick="InputKeys(this)"></td>
+                    <td rowspan="2"><input type="button" value="&#10550;" onclick="Enter()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="&#8593;" id="Shift" onclick="Hoofdletters()"></td>
+                    <td><input type="button" value="&lt" onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="&gt" onclick="InputKeys(this)"></td>
+                    <td colspan="3"><input type="button" value=" " onclick="InputKeys(this)"></td>
+                    <td><input type="button" value="-" id="streepje" onclick="InputKeys(this)"></td>
+                    <td colspan="2"><input type="button" value="&#8592;" onclick="Delete(this)"></td>
+                </tr>
+            </table>
+        </div>
+
+
         <script type="text/javascript" src="modules/Clock/Clock.js"></script>
         <script type="text/javascript" src="modules/Date/Date.js"></script>
         <script type="text/javascript" src="modules/Stopwatch/Stopwatch.js"></script>
         <script type="text/javascript" src="modules/Timer/Timer.js"></script>
+        <script type="text/javascript" src="modules/Keyboard/Keyboard.js"></script>
+        <script type="text/javascript" src="modules/TodoList/TodoList.js"></script> 
     </body>
 </html>
