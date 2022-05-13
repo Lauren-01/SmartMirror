@@ -1,31 +1,183 @@
 body {
     background-color: black;
+    color: white;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+/*-----------------------------------------------------------------*/
+/* BEGIN CSS VAN DE PLAATSEN OP HET SCHERM                         */
+/*-----------------------------------------------------------------*/
+
+
+#linksboven {
+    color: white;
+
+    clear: both;
+    position: absolute;
+
+    margin: 10px;
+    margin-left: 20px;
+
+    width: 250px;
 }
 
 #rechtsboven {
     color: white;
 
-    padding-right: 10%;
+    padding-right: 7%;
     float: right;
     margin: 10px;
     margin-right: 20px;
    
     width: 150px;
+    height: 200px;
 }
 
 #rechtsmidden {
     color: white;
+    
+    padding-right: 7%;
 
-    padding-right: 10%;
-    padding-top: 4%;
-
-    clear: both;            /* Zorgt ervoor dat de box rechts onder de bovenstaande komt, clear de float*/
-    float: right;
+    clear: both;                           /* Zorgt ervoor dat de box rechts onder de bovenstaande komt, clear de float*/
+    position: absolute;
+    transform: translateY(-50%);           /* centreerd de div */
+    top: 50%;
+    right: 0%;
+    
     margin: 10px;
-    margin-right: 20px;
    
     width: 150px;
+    height: 200px;
 }
+
+#linksonder {
+    color: white;
+
+    clear: both;
+    position: absolute;
+
+    margin: 10px;
+    margin-left: 20px;
+
+    bottom: 50px;
+   
+    width: 250px;
+}
+
+#centraalonder {
+    color: white;
+
+    clear: both;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);           /* centreerd de div */
+
+    bottom: 50px;
+    
+    width: 500px;
+}
+
+/*-----------------------------------------------------------------*/
+/* EINDE CSS VAN DE PLAATSEN OP HET SCHERM                         */
+/*-----------------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------*/
+/* BEGIN VAN DE WEER FUNCTIE                                       */
+/*-----------------------------------------------------------------*/
+
+.horizontalweatherForecast {
+    width: 270px;
+    height: 200px;
+}
+
+.forecastwidget {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border-radius: 7px;
+}
+
+.forecastwidget .days {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.forecastwidget .days .day {
+    display: grid;
+    grid-template-columns: 53px;
+    grid-gap: 1px;
+
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.forecastwidget .days .day * {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.forecastwidget .location {
+    font-weight: bold;
+    padding-bottom: 7px;
+}
+
+.forecastwidget .footer {
+    font-size: 0.7em;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.forecastwidget .days .day .date {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    /*padding-left: 3px;*/
+}
+
+
+.forecastwidget .days .day:not(:last-child) {
+    border-right: 1px solid white;
+}
+
+.forecastwidget .days .day .conditions {
+    display: none;
+}
+
+.forecastwidget .days .day .hidden {
+    visibility: hidden;
+}
+
+.forecastwidget .icon {
+    width: 40px;
+    height: 40px;
+}
+
+
+.forecastwidget .icon.snow {background-image:url(Images/snow.png);}
+.forecastwidget .icon.rain {background-image:url(Images/rain.png);}
+.forecastwidget .icon.fog {background-image:url(Images/fog.png);}
+.forecastwidget .icon.wind {background-image:url(Images/wind.png);}
+.forecastwidget .icon.cloudy {background-image:url(Images/cloudy.png);}
+.forecastwidget .icon.partly-cloudy-day {background-image:url(Images/partly-cloudy-day.png);}
+.forecastwidget .icon.partly-cloudy-night {background-image:url(Images/partly-cloudy-night.png);}
+.forecastwidget .icon.clear-day {background-image:url(Images/sun.png);}
+.forecastwidget .icon.clear-night {background-image:url(Images/moon.png);}
+
+
+/*-----------------------------------------------------------------*/
+/* EINDE VAN DE WEER FUNCTIE                                       */
+/*-----------------------------------------------------------------*/
 
 /*-----------------------------------------------------------------*/
 /* BEGIN VAN DE DATUM FUNCTIE */
@@ -106,23 +258,25 @@ body {
 
 #stopw {
     visibility: hidden;
+    position: absolute;
 }
 
-#iconStopwatch {
+#icon {
     width: 50px;
     height: 50px;
 
-    margin-bottom: 10%;
+    margin-bottom: 6%;
 }
 
 #stopwatch {
     font-size: 50px;
+    margin-top: 16%;
 
     position: relative;
     white-space: nowrap;
 }
 
-button {
+#stopwbuttons button {
     width: 90%;
     margin-right: 10%;
 
@@ -133,16 +287,16 @@ button {
     border-radius: 10%;
 }
 
-li {                        /* Zorgt ervoor dat de knoppen naast elkaar staan en een vaste breedte hebben */
+#stopwbuttons {                        /* Zorgt ervoor dat de knoppen naast elkaar staan en een vaste breedte hebben */
     display: block;
-    width: 50%;
+    width: 45%;
     float: left;
 }
 
-ul {                        /* Zorgt ervoor dat de knoppen net onder de cijfers staan zonder rare uitlijning */
+#stopwatchButtons {                   /* Zorgt ervoor dat de knoppen net onder de cijfers staan zonder rare uitlijning */
     padding: 0;
     margin: 0;
-    padding-left: 20%;
+    padding-left: 15%;
 }
 
 /*------------------------------------------------------------------*/
@@ -205,6 +359,118 @@ ul {                        /* Zorgt ervoor dat de knoppen net onder de cijfers 
     opacity: 0.5;
 }
 
+#tmrbuttons button {
+    width: 90%;
+    margin-right: 10%;
+
+    background-color: black;
+    color: white;
+
+    border: 2px solid white;
+    border-radius: 10%;
+}
+
 /*------------------------------------------------------------------*/
 /* EINDE VAN DE TIMER FUNCTIE */
+/*------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------*/
+/* BEGIN VAN DE TodoLists FUNCTIE */
+/*------------------------------------------------------------------*/
+
+#input{
+    color: white;
+    border: solid 0.5px white;
+    width: 200px;
+    background-color: black;
+    border-radius: 5px;
+
+    overflow: hidden;           /*Deze nog toevoegen zodat de input niet achter het kruisje gaat?*/
+}
+
+.todolijst {
+    color: white;
+    background-color: black;
+    
+    height: fit-content;
+}
+
+#lijst{
+    color: white;
+
+    height: 200px;
+    overflow-y: auto;               /*Maakt een scrollbar wanneer de maximale hoogte overschreden wordt*/
+}
+
+.button{
+    color: white;
+    background-color: black;
+}
+
+#lijst::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+#lijst::-webkit-scrollbar-track {
+    background: black;
+}
+
+#lijst::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 50%;
+}
+
+
+/*------------------------------------------------------------------*/
+/* EINDE VAN DE TodoLists FUNCTIE */
+/*------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------*/
+/* BEGIN VAN DE KEYBOARD FUNCTIE */
+/*------------------------------------------------------------------*/
+
+
+#keyboard {
+    table-layout: fixed;
+    display: none;
+
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+
+    border: 1px solid white;
+    border-spacing: 4px;
+}
+
+#keyboard td {
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 3px;
+
+    width: 49px;
+    height: 25px;
+}
+
+#keyboard input {
+    background-color: transparent;
+    border: 0px;
+
+    color: white;
+
+    display: table-cell;
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.Kleineletter {
+    text-transform: lowercase;
+}
+
+/*------------------------------------------------------------------*/
+/* EINDE VAN DE KEYBOARD FUNCTIE */
 /*------------------------------------------------------------------*/
