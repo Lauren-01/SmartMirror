@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="layout.css">
         <!--jquery used to minimize the code for the weather forecast-->
-	    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     </head>
     <body onload="SwitchBetweenClocks(), getDate(), weer()">
 
@@ -68,17 +68,13 @@
 
 
         <div id="linksonder">
-            <div class="Todo">
-                <div id="todolijst" class="header">
-                    <h2>To Do Lijst</h2> 
-                <!--placeholder en button -->
-                    <input type="text" id="Input" placeholder="......." onfocus="showKeyboard()">
-                    <button onclick="nieuwItem()" class="addBtn">+</button>
+            <div class="todoList">
+                <h2>TodoList</h2>
+                <div id="text">
+                    <input id="input" type="text" onfocus="tonen()" ondblclick="verbergen()"/>
+                    <input class="button" type="button" value="+" onclick="twoFunction()"><!--add button -->
                 </div>
-            </div>
-            <!--lijst items van todo-lijst -->
-            <div class="ItemsTodo">
-                <ul id="Lijst"></ul>
+                <div id="lijst"></div><!--in deze div worden de P elementen gemaakt voor de todolijst-->
             </div>
         </div>
 
@@ -151,5 +147,6 @@
         <script type="text/javascript" src="modules/Timer/Timer.js"></script>
         <script type="text/javascript" src="modules/Keyboard/Keyboard.js"></script>
         <script type="text/javascript" src="modules/TodoList/TodoList.js"></script> 
+        <script type="text/javascript" src="modules/Weather/Weather.js"></script>    
     </body>
 </html>
