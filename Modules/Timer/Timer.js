@@ -334,8 +334,9 @@ function StartTimer() {
             hour = 0;
             second = 0;
             minute = 0;
-            ResetTimer();
-            console.log("000");
+
+            ResetTimer();       // Indien er nu bv seconden worden toegevoegd na 00:00:00 zal je opnieuw op start moeten klikken
+            return;
         }
     }
 
