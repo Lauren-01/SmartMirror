@@ -9,6 +9,10 @@ var hour = 0;
 function OpenStopwatch() {
     if (iconStopw == 0)
     {
+        iconTimer = 0;
+        document.getElementById('tmr').style.visibility = "hidden";
+        ResetTimer();
+
         iconStopw = 1;
         document.getElementById('stopw').style.visibility = "visible";
     }
@@ -84,5 +88,4 @@ function ResetStopwatch() {
     h = check(hour);
 
     document.getElementById('stopwatch').innerHTML = h + ':' + m + ':' + s;
-
 }
