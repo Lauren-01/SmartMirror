@@ -4,9 +4,17 @@
         <title>Smart Mirror</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="layout.css">
+        <!--jquery used to minimize the code for the weather forecast-->
+	    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     </head>
-    <body onload="SwitchBetweenClocks(), getDate()">
+    <body onload="SwitchBetweenClocks(), getDate(), weer()">
 
+        
+        <div id="linksboven">
+            <div class="horizontalweatherForecast" data-key="HSTS6JGCMEG4GTSWMLB982YGC" data-location="Mechelen, BE" data-unitgroup="metric"></div>
+        </div>
+        
+        
         <div id="rechtsboven">
             <div id="date"></div>
             <div onclick="SwitchBetweenClocks()" id="clock">
