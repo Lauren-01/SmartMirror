@@ -1,6 +1,8 @@
 var int;
 var iconTimer = 0;
 
+var pauzeTimer = 0;
+
 var second = 0;
 var minute = 0;
 var hour = 0;
@@ -315,6 +317,20 @@ function ShowTimer() {
 
 
 function StartTimer() {
+    if (pauzeTimer == 0)
+    {
+        pauzeTimer = 1;
+        document.getElementById('StartStopTimer').innerHTML = "Pause";
+        Timer();
+    }
+    else {                              // if (pauze == 1) {...}
+        pauzeTimer = 0;
+        document.getElementById('StartStopTimer').innerHTML = "Start";
+        clearTimeout(int);
+    }
+}
+
+function Timer() {
     clearTimeout(int);
 
     var h, m, s;
@@ -328,7 +344,7 @@ function StartTimer() {
         }
         if (minute > 0) {
             second = 59;
-            minute--;                
+            minute--;
         }
         else {
             hour = 0;
@@ -347,7 +363,7 @@ function StartTimer() {
 
     document.getElementById('timer').innerHTML = h + ':' + m + ':' + s;
 
-    int = setTimeout(StartTimer, 1000);
+    int = setTimeout(Timer, 1000);
 
     RemoveTenH.style.opacity = "0.5";
     RemoveOneH.style.opacity = "0.5";
