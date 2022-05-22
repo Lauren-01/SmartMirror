@@ -23,13 +23,13 @@ body {
     margin: 10px;
     margin-left: 20px;
 
-    width: 250px;
+    width: 300px;
 }
 
 #rechtsboven {
     color: white;
 
-    padding-right: 7%;
+    padding-right: 120px;
     float: right;
     margin: 10px;
     margin-right: 20px;
@@ -38,21 +38,39 @@ body {
     height: 200px;
 }
 
+#linksmidden {
+    color: white;
+
+    padding-right: 75px;
+
+    clear: both;                           /* Zorgt ervoor dat de box rechts onder de bovenstaande komt, clear de float*/
+    position: absolute;
+    transform: translateY(-50%);           /* centreerd de div */
+    top: 50%;
+    left: 0%;
+
+    margin: 10px;
+    margin-left: 20px;
+   
+    width: 250px;
+    height: 250px;
+}
+
 #rechtsmidden {
     color: white;
-    
-    padding-right: 7%;
+
+    padding-right: 75px;
 
     clear: both;                           /* Zorgt ervoor dat de box rechts onder de bovenstaande komt, clear de float*/
     position: absolute;
     transform: translateY(-50%);           /* centreerd de div */
     top: 50%;
     right: 0%;
-    
+
     margin: 10px;
    
-    width: 150px;
-    height: 200px;
+    width: 200px;
+    height: 250px;
 }
 
 #linksonder {
@@ -61,7 +79,6 @@ body {
     clear: both;
     position: absolute;
 
-    margin: 10px;
     margin-left: 20px;
 
     bottom: 50px;
@@ -80,6 +97,23 @@ body {
     bottom: 50px;
     
     width: 500px;
+}
+
+#rechtsonder {
+    color: white;
+
+    padding-right: 75px;
+
+    clear: both;
+    position: absolute;
+
+    margin-right: 20px;
+
+    bottom: 50px;
+    right: 0%;
+   
+    width: 300px;
+    height: 200px;
 }
 
 /*-----------------------------------------------------------------*/
@@ -161,6 +195,7 @@ body {
 .forecastwidget .icon {
     width: 40px;
     height: 40px;
+    background-size: 100%;
 }
 
 
@@ -180,20 +215,20 @@ body {
 /*-----------------------------------------------------------------*/
 
 /*-----------------------------------------------------------------*/
-/* BEGIN VAN DE DATUM FUNCTIE */
+/* BEGIN VAN DE DATUM FUNCTIE                                      */
 /*-----------------------------------------------------------------*/
 
-#date {
+#datum {
     font-size: 25px;
     padding-bottom: 10px;
 }
 
 /*-----------------------------------------------------------------*/
-/* EINDE VAN DE DATUM FUNCTIE */
+/* EINDE VAN DE DATUM FUNCTIE                                      */
 /*-----------------------------------------------------------------*/
 
 /*------------------------------------------------------------------*/
-/* BEGIN VAN DE KLOK FUNCTIE */
+/* BEGIN VAN DE KLOK FUNCTIE                                        */
 /*------------------------------------------------------------------*/
 
 #clock {
@@ -210,12 +245,12 @@ body {
     border-radius: 10px;
     transform-origin: bottom;
     background: white;
-    
+
     width: 1.8%;
     height: 30%;
     top: 20%;
     left: 49%;
-    
+
     opacity: 0.8;
 }
 
@@ -224,12 +259,12 @@ body {
     border-radius: 10px;
     transform-origin: bottom;
     background: white;
-    
+
     width: 1.5%;
     height: 38%;
     top: 12%;
     left: 49%;
-    
+
     opacity: 0.8;
 }
 
@@ -238,12 +273,12 @@ body {
     border-radius: 10px;
     transform-origin: bottom;
     background: white;
-    
+
     width: 1%;
     height: 46%;
     top: 4%;
     left: 49%;
-    
+
     opacity: 0.8;
 }
 
@@ -261,16 +296,16 @@ body {
     position: absolute;
 }
 
-#icon {
+#rechtsmidden #icon {
     width: 50px;
     height: 50px;
 
-    margin-bottom: 6%;
+    margin-right: 4.2%;
 }
 
 #stopwatch {
     font-size: 50px;
-    margin-top: 16%;
+    margin-top: 21.5%;
 
     position: relative;
     white-space: nowrap;
@@ -327,7 +362,7 @@ body {
 
 #arrowsup img {
     margin-right: 3px;
-    margin-top: 5%;
+    margin-top: 10%;
 
     height: 15px;
     width: 15px;
@@ -351,7 +386,7 @@ body {
 #timerButtons {                  /* Zorgt ervoor dat de knoppen net onder de cijfers staan zonder rare uitlijning */
     padding: 0;
     margin: 0;
-    padding-left: 5%;
+    padding-left: 4%;
     padding-top: 10px;
 }
 
@@ -399,7 +434,7 @@ body {
 #lijst{
     color: white;
 
-    height: 200px;
+    height: 150px;
     overflow-y: auto;               /*Maakt een scrollbar wanneer de maximale hoogte overschreden wordt*/
 }
 
@@ -424,12 +459,12 @@ body {
 
 
 /*------------------------------------------------------------------*/
-/* EINDE VAN DE TodoLists FUNCTIE */
+/* EINDE VAN DE TodoLists FUNCTIE                                   */
 /*------------------------------------------------------------------*/
 
 
 /*------------------------------------------------------------------*/
-/* BEGIN VAN DE KEYBOARD FUNCTIE */
+/* BEGIN VAN DE KEYBOARD FUNCTIE                                    */
 /*------------------------------------------------------------------*/
 
 
@@ -472,5 +507,102 @@ body {
 }
 
 /*------------------------------------------------------------------*/
-/* EINDE VAN DE KEYBOARD FUNCTIE */
+/* EINDE VAN DE KEYBOARD FUNCTIE                                    */
 /*------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------*/
+/* BEGIN VAN DE SPOTIFY FUNCTIE                                     */
+/*------------------------------------------------------------------*/
+
+
+
+#Spotifyicon {
+    width: 50px;
+    height: 50px;
+
+    position: absolute;
+    right: 215px;
+}
+
+
+#SpotifyPlayl {
+    position: absolute;
+    bottom: 0;
+
+   /* white-space: nowrap;*/
+}
+
+/*------------------------------------------------------------------*/
+/* EINDE VAN DE SPOTIFY FUNCTIE                                     */
+/*------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------*/
+/* BEGIN VAN DE YOUTUBE FUNCTIE                                     */
+/*------------------------------------------------------------------*/
+
+
+#Youtube img {
+    height: 50px;
+
+    position: absolute;
+    right: 90px;
+}
+
+/*------------------------------------------------------------------*/
+/* EINDE VAN DE YOUTUBE FUNCTIE                                     */
+/*------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------*/
+/* BEGIN VAN DE AGENDA FUNCTIE                                     */
+/*------------------------------------------------------------------*/
+
+#agenda h1{
+    margin: 0px;
+}
+
+#input_verbergen{
+    display: none;
+}
+
+#date, #agendatopic {
+    color: white;
+    border: solid 0.5px white;
+    width: 200px;
+    background-color: black;
+    border-radius: 5px;
+
+    margin-top: 5px;
+
+    overflow: hidden; 
+}
+
+.numberDate{
+    width: 30px;
+    
+}
+.numberDate , .agendatopic{
+   border: none; 
+
+}
+/*button input velden*/
+.topic_add{
+    color: white;
+    background-color: black;
+}
+
+/**************************************************************/
+/*tabel waar agenda word in opgeslagen*/
+table{
+  width:300px;
+}
+
+#tab th{
+    text-align: left;
+    font-size: 20px;
+}
+
+#tab th, td{
+    width: 99px;
+    border-bottom: 2px solid black;
+}
+
