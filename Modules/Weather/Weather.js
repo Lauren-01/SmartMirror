@@ -2,8 +2,6 @@ function weer() {
     WeatherForecastDisplay.attach(".horizontalweatherForecast");
 }
 
-
-
 /*
 	WeatherForecastDisplay encapsulates the weather forecast
 */
@@ -21,7 +19,6 @@ var WeatherForecastDisplay=(function() {
             "unitGroup":selector.attr("data-unitGroup") || "us",
             "key": selector.attr("data-key") 
         }
-
         
         //the root HTML tag selector
         this.selector=selector;
@@ -53,6 +50,7 @@ var WeatherForecastDisplay=(function() {
                 $(me.selector).html("No data available for "+me.config.location);
                 return;
             }
+
             var locationData=me.data.location;
 
             var forecastValues=locationData.values;
@@ -63,8 +61,6 @@ var WeatherForecastDisplay=(function() {
                         "<div class='days'></div>"+
                         "<div class='footer'><a href='https://www.visualcrossing.com/weather-api' title='Weather Data by Visual Crossing' target='_blank'>Credit</a>");
 
-           
-         
             //use the container size to decide how to display the forecast
             //and how many days
             var rect=root.get(0).getBoundingClientRect()
@@ -80,13 +76,11 @@ var WeatherForecastDisplay=(function() {
                         "<div class='icon'></div>"+
                         "<div class='maxt'></div>"+
                         "<div class='mint'></div>"+
-                        "<div class='precip'><span class='value'></span></div>"+
                         "<div class='conditions'></div>"+
                         "</div>");
                 
                 //add the day to the days element
                 root.find(".days").append(dayElement);
-                
                 
                 //temperature and conditions are simply inserted into the appropriate div
                 dayElement.find(".maxt").html(Math.round(d.maxt));
@@ -97,17 +91,9 @@ var WeatherForecastDisplay=(function() {
                 var date= new Date(d.datetimeStr);
                 
                 dayElement.find(".date").html(MONTHS[date.getMonth()]+" "+date.getDate());
-
-
-                //the rainfall value includes so hide the whole section if no rainfall
-                var precip=dayElement.find(".precip");
-                precip.toggleClass("hidden",  !d.precip);
-                precip.find(".value").html(d.precip);
                 
                 var icon=dayElement.find(".icon");
                 icon.toggleClass(d.icon,true);
-               
-               
             });
         }
     }
