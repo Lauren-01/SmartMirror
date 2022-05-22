@@ -1,5 +1,5 @@
 # SmartMirror
 
 
-![Voorbeeld1](/Examples/Example.png)
+![Voorbeeld1](/Example/Example.png)
 
