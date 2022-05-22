@@ -6,6 +6,9 @@
         <link rel="stylesheet" href="layout.css">
         <!--jquery used to minimize the code for the weather forecast-->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <link href="./Modules/Agenda/jquery-ui-1.13.1.custom/jquery-ui.css" rel="stylesheet" />
+        <script src="./Modules/Agenda/jquery-ui-1.13.1.custom/external/jquery/jquery.js"></script>
+        <script src="./Modules/Agenda/jquery-ui-1.13.1.custom/jquery-ui.js"></script>    
     </head>
     <body onload="SwitchBetweenClocks(), getDate(), weer()">
 
@@ -24,6 +27,24 @@
             </div>
         </div>
 
+	    
+	<div id="linksmidden">
+            <div id="agenda" >
+                <h1 onclick="tonen('input_verbergen')">Agenda</h1>
+                <div id="input_verbergen">
+                    <input id="date" type="text">
+                    <input type="text" id="agendatopic" onfocus="tonenKeyb()" ondblclick="verbergenKeyb()" onclick="Where(0)">
+                    <input class="topic_add" type="button" value="+" onclick="mijnfunctieAgenda(),clearinputVelden(),refreshTabel()">
+                </div>
+            
+                
+                <table id="tab">
+                    <tr><th>Date</th><th>Topic</th><th>Days to go</th></tr><!--header van tabel agenda-->
+                    
+                </table>
+            </div>
+        </div>
+	    
 
         <div id="rechtsmidden">
             <img src="./Images/StopwatchPhoto.png" id="icon" onclick="OpenStopwatch()"></img>       <!-- Bij het klikken zal de stopwatch verschijnen of verdwijnen-->
@@ -141,6 +162,19 @@
         </div>
 
 
+        <div id="rechtsonder">
+            <div id="Spotify">
+                <img src="./Images/Spotify.png" id="Spotifyicon" onclick="switchplaylist()"></img>
+                <div id="SpotifyPlayl">
+                    <iframe style="border-radius:12px" src="" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; auto-shuffle; clipboard-write; encrypted-media; fullscreen; picture-in-picture" id="SpotifyPlaylist"></iframe>
+                </div>
+            </div>
+            <div id="Youtube">
+                <img id="youtube" src="./Images/Youtube.png" alt="youtube" onclick="openVenster()">
+            </div>
+        </div>
+
+
         <script type="text/javascript" src="modules/Clock/Clock.js"></script>
         <script type="text/javascript" src="modules/Date/Date.js"></script>
         <script type="text/javascript" src="modules/Stopwatch/Stopwatch.js"></script>
@@ -148,5 +182,8 @@
         <script type="text/javascript" src="modules/Keyboard/Keyboard.js"></script>
         <script type="text/javascript" src="modules/TodoList/TodoList.js"></script> 
         <script type="text/javascript" src="modules/Weather/Weather.js"></script>    
+        <script type="text/javascript" src="modules/Spotify/Spotify.js"></script>   
+        <script type="text/javascript" src="modules/Youtube/Youtube.js"></script>   
+        <script type="text/javascript" src="modules/Agenda/Agenda.js"></script>
     </body>
 </html>
