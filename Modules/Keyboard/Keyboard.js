@@ -1,5 +1,9 @@
 var keyb = document.getElementById("keyboard");
-var inp = document.getElementById("Input");
+var inp; // = document.getElementById("input");
+var plaats;
+var plaatsagenda = 0;
+var plaatstodolijst = 0;
+
 
 var showKeyboard = 0;
 var upperKey = 0;
@@ -17,6 +21,27 @@ function showKeyboard() {
         showKeyboard = 0;
         keyb.style.visibility = "hidden";
     }
+}
+
+
+function Where(plaats) {
+    switch (plaats)
+    {
+        case 0:
+            console.log(plaats);
+            inp = document.getElementById("agendatopic");
+            plaatsagenda = 1;
+            plaatstodolijst = 0;
+            break;
+        case 1:
+            console.log(plaats);
+            inp = document.getElementById("input");
+            plaatsagenda = 0;
+            plaatstodolijst = 1;
+            break;
+    }
+
+    return plaats;
 }
 
 
@@ -78,5 +103,13 @@ function Hoofdletters() {
 
 
 function Enter() {
-
+    if (plaatsagenda == 1)
+    {
+        mijnfunctieAgenda(), clearinputVelden(), refreshTabel();
+    }
+    
+    if (plaatstodolijst == 1)
+    {
+        twoFunction();
+    }
 }
