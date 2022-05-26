@@ -5,21 +5,21 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="layout.css">
         <!--jquery used to minimize the code for the weather forecast-->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <link href="./Modules/Agenda/jquery-ui-1.13.1.custom/jquery-ui.css" rel="stylesheet" />
         <script src="./Modules/Agenda/jquery-ui-1.13.1.custom/external/jquery/jquery.js"></script>
         <script src="./Modules/Agenda/jquery-ui-1.13.1.custom/jquery-ui.js"></script>    
     </head>
     <body onload="SwitchBetweenClocks(), getDate(), weer()">
 
-        
+
         <div id="linksboven">
             <div class="horizontalweatherForecast" data-key="HSTS6JGCMEG4GTSWMLB982YGC" data-location="Mechelen, BE" data-unitgroup="metric"></div>
         </div>
-        
-        
+
+
         <div id="rechtsboven">
-            <div id="date"></div>
+            <div id="datum"></div>
             <div onclick="SwitchBetweenClocks()" id="clock">
                 <div id="hour"></div>
                 <div id="minute"></div>
@@ -27,24 +27,29 @@
             </div>
         </div>
 
-	    
-	<div id="linksmidden">
+
+        <div id="linksmidden">
             <div id="agenda" >
                 <h1 onclick="tonen('input_verbergen')">Agenda</h1>
                 <div id="input_verbergen">
-                    <input id="date" type="text">
-                    <input type="text" id="agendatopic" onfocus="tonenKeyb()" ondblclick="verbergenKeyb()" onclick="Where(0)">
+                    <input id="date" type="text" placeholder="Click for the date">
+                    <input type="text" id="agendatopic" placeholder="Enter topic" onfocus="tonenKeyb()" ondblclick="verbergenKeyb()" onclick="Where(0)">
                     <input class="topic_add" type="button" value="+" onclick="mijnfunctieAgenda(),clearinputVelden(),refreshTabel()">
                 </div>
-            
-                
-                <table id="tab">
+
+                <table id="table2">
                     <tr><th>Date</th><th>Topic</th><th>Days to go</th></tr><!--header van tabel agenda-->
                     
                 </table>
+            
+                <div id="scrollagenda">
+                    <table id="tab">
+                        
+                    </table>
+                </div>
             </div>
         </div>
-	    
+
 
         <div id="rechtsmidden">
             <img src="./Images/StopwatchPhoto.png" id="icon" onclick="OpenStopwatch()"></img>       <!-- Bij het klikken zal de stopwatch verschijnen of verdwijnen-->
@@ -81,7 +86,7 @@
                     <img src="./Images/arrowup.png" id="removeOneS" onclick="RemoveOneSecond()"></img>
                 </div>
                 <ul id="timerButtons">
-                    <li id="tmrbuttons"><button onclick="StartTimer()">Start</button></li>
+                    <li id="tmrbuttons"><button id="StartStopTimer" onclick="StartTimer()">Start</button></li>
                     <li id="tmrbuttons"><button onclick="ResetTimer()">Reset</button></li>
                 </ul>
             </div>
@@ -90,9 +95,9 @@
 
         <div id="linksonder">
             <div class="todoList">
-                <h2>TodoList</h2>
+                <h1>TodoList</h1>
                 <div id="text">
-                    <input id="input" type="text" onfocus="tonen()" ondblclick="verbergen()"/>
+                    <input id="input" type="text" placeholder="Add text" onfocus="tonenKeyb()" ondblclick="verbergenKeyb()" onclick="Where(1)"/>
                     <input class="button" type="button" value="+" onclick="twoFunction()"><!--add button -->
                 </div>
                 <div id="lijst"></div><!--in deze div worden de P elementen gemaakt voor de todolijst-->
@@ -166,7 +171,7 @@
             <div id="Spotify">
                 <img src="./Images/Spotify.png" id="Spotifyicon" onclick="switchplaylist()"></img>
                 <div id="SpotifyPlayl">
-                    <iframe style="border-radius:12px" src="" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; auto-shuffle; clipboard-write; encrypted-media; fullscreen; picture-in-picture" id="SpotifyPlaylist"></iframe>
+                    <iframe style="border-radius:12px" src="" width="95%" height="175" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" id="SpotifyPlaylist"></iframe>
                 </div>
             </div>
             <div id="Youtube">
@@ -179,11 +184,11 @@
         <script type="text/javascript" src="modules/Date/Date.js"></script>
         <script type="text/javascript" src="modules/Stopwatch/Stopwatch.js"></script>
         <script type="text/javascript" src="modules/Timer/Timer.js"></script>
-        <script type="text/javascript" src="modules/Keyboard/Keyboard.js"></script>
         <script type="text/javascript" src="modules/TodoList/TodoList.js"></script> 
-        <script type="text/javascript" src="modules/Weather/Weather.js"></script>    
+        <script type="text/javascript" src="modules/Keyboard/Keyboard.js"></script>
+        <script type="text/javascript" src="modules/Weather/Weather.js"></script>   
         <script type="text/javascript" src="modules/Spotify/Spotify.js"></script>   
         <script type="text/javascript" src="modules/Youtube/Youtube.js"></script>   
-        <script type="text/javascript" src="modules/Agenda/Agenda.js"></script>
+        <script type="text/javascript" src="modules/Agenda/Agenda.js"></script>   
     </body>
 </html>
