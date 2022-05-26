@@ -143,6 +143,33 @@ function check(input) {                 // voegt een 0 toe zodat de klok er alti
     return input;
 }
 
+
+function backintime(){
+    var date = document.getElementById("date").value;
+    const myArray = date.split("/"); // datepicker geeft een string terug deze kan gesplits worden door .split("/") ==> deze geef op zich dan weer een array terug 
+
+    var eventDag = parseInt(myArray[0]);          //dag uit array halen
+    var eventMaand =parseInt( myArray[1]);        //Maand uit array halen
+    var eventyear =parseInt(myArray[2]);
+    var nu = new Date();
+    var nuDag =nu.getDate();
+    var nuMaand =nu.getMonth();
+    var nuyear =nu.getFullYear();
+    nuMaand++;
+
+    if( eventDag<nuDag && nuyear==eventyear && nuMaand ==eventMaand || eventyear<nuyear || eventyear==nuyear && eventMaand<nuMaand )
+    {
+        alert("event kan zich niet bevinden in het verleden");
+        document.getElementById("date").value="";
+    }
+    else{
+        mijnfunctieAgenda();
+        clearinputVelden();
+        refreshTabel();
+    }
+}
+
+
 // localStorage.setItem('todo', JSON.stringify(todoData));
 function mijnfunctieAgenda(){
 
