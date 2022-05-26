@@ -1,3 +1,5 @@
+var groot = 0;
+
 function weer() {
     WeatherForecastDisplay.attach(".horizontalweatherForecast");
 }
