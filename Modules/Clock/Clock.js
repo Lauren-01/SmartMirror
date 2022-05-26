@@ -1,9 +1,9 @@
 var kloksoort = 1;
-var interval;
+var intervalklok;
 
 
 function showTimeSeconds() {
-    clearInterval(interval);
+    clearTimeout(intervalklok);
 
     document.getElementById('clock').style.border = "none";     // cirkel van analoge klok terug verwijderen!
 
@@ -18,11 +18,11 @@ function showTimeSeconds() {
 
     document.getElementById('clock').innerHTML = hours + ":" + minutes + ":" + seconds;
     
-    interval = setTimeout(showTimeSeconds, 1000);
+    intervalklok = setTimeout(showTimeSeconds, 1000);
 }
 
 function showTime() {
-    clearInterval(interval);
+    clearTimeout(intervalklok);
 
     const today = new Date();
     var hours = today.getHours();
@@ -33,29 +33,29 @@ function showTime() {
 
     document.getElementById('clock').innerHTML = hours + ":" + minutes;
     
-    interval = setTimeout(showTime, 1000);
+    intervalklok = setTimeout(showTime, 1000);
 }
 
 function showTimeAMPM() {
-    clearInterval(interval);
+    clearTimeout(intervalklok);
 
     const today = new Date();
     var hours = today.getHours();
     var minutes = today.getMinutes();
 
-
+    hours = check(hours);
+    minutes = check(minutes);
+    
     if (hours >= 12)
     {
         if (hours == 12) 
         {
-            hours = check(hours);
             document.getElementById('clock').innerHTML = hours + ":" + minutes + " PM";
         }
         else
         {
             hours = hours - 12;
             hours = check(hours);
-            minutes = check(minutes);    
             document.getElementById('clock').innerHTML = hours + ":" + minutes + " PM";
         }
     }
@@ -64,7 +64,7 @@ function showTimeAMPM() {
         document.getElementById('clock').innerHTML = hours + ":" + minutes + " AM";
     }
     
-    interval = setTimeout(showTimeAMPM, 1000);
+    intervalklok = setTimeout(showTimeAMPM, 1000);
 }
 
 function check(input) {                 // voegt een 0 toe zodat de klok er altijd als "hh:mm:ss" uitziet
@@ -77,7 +77,7 @@ function check(input) {                 // voegt een 0 toe zodat de klok er alti
 
 
 function analogClock() {
-    clearInterval(interval);
+    clearTimeout(intervalklok);
     
     const hour = document.createElement('div');                         // .innerHTML verwijderd alles ook de divs in de clock
     const minute = document.createElement('div');                       // hier creëren we een nieuwe constante met als waarde een div
@@ -109,7 +109,7 @@ function analogClock() {
     document.getElementById('minute').style.transform = `rotate(${minuterotation}deg)`;
     document.getElementById('second').style.transform = `rotate(${secondrotation}deg)`;
 
-    interval = setTimeout(analogClock, 1000);
+    intervalklok = setTimeout(analogClock, 1000);
 }
 
 
