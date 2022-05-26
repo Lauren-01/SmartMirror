@@ -11,44 +11,44 @@ function getDate() {
     switch(month)
     {
         case 0:
-            month = 'januari';
+            month = 'January';
             break;
         case 1:
-            month = 'februari';
+            month = 'February';
             break;
         case 2:
-            month = 'maart';
+            month = 'March';
             break;
         case 3:
-            month = 'april';
+            month = 'April';
             break;
         case 4:
-            month = 'mei';
+            month = 'May';
             break;
         case 5:
-            month = 'juni';
+            month = 'June';
             break;
         case 6:
-            month = 'juli';
+            month = 'July';
             break;
         case 7:
-            month = 'augustus';
+            month = 'August';
             break;
         case 8:
-            month = 'september';
+            month = 'September';
             break;
         case 9:
-            month = 'oktober';
+            month = 'October';
             break;
         case 10:
-            month = 'november';
+            month = 'November';
             break;
         case 11:
-            month = 'december';
+            month = 'December';
             break;
     }
 
-    document.getElementById('date').innerHTML = day + " " + month + " " + year;
+    document.getElementById('datum').innerHTML = day + " " + month + " " + year;
     
     interval = setTimeout(getDate, 1000);
 }
