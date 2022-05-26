@@ -10,6 +10,9 @@ var hour = 0;
 var tmr = document.getElementById('tmr');
 var stopw = document.getElementById('stopw');
 
+var alarm = new Audio('./Modules/Timer/alarm.mp3');
+
+
 var AddTenH = document.getElementById('addTenH');
 var RemoveTenH = document.getElementById('removeTenH');
 var AddOneH = document.getElementById('addOneH');
@@ -351,7 +354,9 @@ function Timer() {
             second = 0;
             minute = 0;
 
-            ResetTimer();       // Indien er nu bv seconden worden toegevoegd na 00:00:00 zal je opnieuw op start moeten klikken
+            alarm.play();
+            clearTimeout(int);
+            document.getElementById('StartStopTimer').innerHTML = "Start";
             return;
         }
     }
@@ -375,6 +380,12 @@ function Timer() {
 
 function ResetTimer() {
     clearTimeout(int);
+
+    pauzeTimer = 0;
+    document.getElementById('StartStopTimer').innerHTML = "Start";
+    
+    alarm.pause();
+    alarm.currentTime = 0;
 
     second = 0;
     minute = 0;
