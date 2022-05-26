@@ -11,7 +11,7 @@ function switchplaylist() {
     switch(playlist)
     {
         case 1:
-            s = "https://open.spotify.com/embed/playlist/3vSAQl65EzENeXZMqqoY1s?utm_source=generator&theme=0";
+            s = "https://open.spotify.com/embed/playlist/37i9dQZF1DWWGzo2lhvYlP?utm_source=generator&theme=0";
             playlist = 2;
             break;
         case 2:
