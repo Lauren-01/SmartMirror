@@ -9,9 +9,9 @@ body {
 }
 
 
-/*-----------------------------------------------------------------*/
-/* BEGIN CSS VAN DE PLAATSEN OP HET SCHERM                         */
-/*-----------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+/* BEGIN CSS VAN DE PLAATSEN OP HET SCHERM                          */
+/*------------------------------------------------------------------*/
 
 
 #linksboven {
@@ -41,18 +41,15 @@ body {
 #linksmidden {
     color: white;
 
-    padding-right: 75px;
-
     clear: both;                           /* Zorgt ervoor dat de box rechts onder de bovenstaande komt, clear de float*/
     position: absolute;
     transform: translateY(-50%);           /* centreerd de div */
-    top: 50%;
-    left: 0%;
+    top: 45%;
 
     margin: 10px;
     margin-left: 20px;
    
-    width: 250px;
+    width: 300px;
     height: 250px;
 }
 
@@ -64,7 +61,7 @@ body {
     clear: both;                           /* Zorgt ervoor dat de box rechts onder de bovenstaande komt, clear de float*/
     position: absolute;
     transform: translateY(-50%);           /* centreerd de div */
-    top: 50%;
+    top: 45%;
     right: 0%;
 
     margin: 10px;
@@ -84,6 +81,7 @@ body {
     bottom: 50px;
    
     width: 250px;
+    height: 250px;
 }
 
 #centraalonder {
@@ -96,7 +94,7 @@ body {
 
     bottom: 50px;
     
-    width: 500px;
+    width: 750px;
 }
 
 #rechtsonder {
@@ -113,17 +111,16 @@ body {
     right: 0%;
    
     width: 300px;
-    height: 200px;
+    height: 250px;
 }
 
-/*-----------------------------------------------------------------*/
-/* EINDE CSS VAN DE PLAATSEN OP HET SCHERM                         */
-/*-----------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+/* EINDE CSS VAN DE PLAATSEN OP HET SCHERM                          */
+/*------------------------------------------------------------------*/
 
-
-/*-----------------------------------------------------------------*/
-/* BEGIN VAN DE WEER FUNCTIE                                       */
-/*-----------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+/* BEGIN VAN DE WEER FUNCTIE                                        */
+/*------------------------------------------------------------------*/
 
 .horizontalweatherForecast {
     width: 270px;
@@ -176,7 +173,6 @@ body {
     white-space: nowrap;
     display: flex;
     align-items: center;
-    /*padding-left: 3px;*/
 }
 
 
@@ -210,22 +206,109 @@ body {
 .forecastwidget .icon.clear-night {background-image:url(Images/moon.png);}
 
 
-/*-----------------------------------------------------------------*/
-/* EINDE VAN DE WEER FUNCTIE                                       */
-/*-----------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+/* EINDE VAN DE WEER FUNCTIE                                        */
+/*------------------------------------------------------------------*/
 
-/*-----------------------------------------------------------------*/
-/* BEGIN VAN DE DATUM FUNCTIE                                      */
-/*-----------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+/* BEGIN VAN DE DATUM FUNCTIE                                       */
+/*------------------------------------------------------------------*/
 
 #datum {
     font-size: 25px;
     padding-bottom: 10px;
 }
 
-/*-----------------------------------------------------------------*/
-/* EINDE VAN DE DATUM FUNCTIE                                      */
-/*-----------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+/* EINDE VAN DE DATUM FUNCTIE                                       */
+/*------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------*/
+/* BEGIN VAN DE AGENDA FUNCTIE                                      */
+/*------------------------------------------------------------------*/
+
+#agenda h1{
+    margin: 0px;
+}
+
+#input_verbergen{
+    display: none;
+}
+
+#date, #agendatopic {
+    color: white;
+    border: solid 0.5px white;
+    width: 200px;
+    background-color: black;
+    border-radius: 5px;
+
+    margin-top: 5px;
+
+    overflow: hidden; 
+}
+
+.numberDate{
+    width: 30px;
+    
+}
+.numberDate , .agendatopic{
+   border: none; 
+
+}
+/*button input velden*/
+.topic_add{
+    color: white;
+    background-color: black;
+}
+
+/**************************************************************/
+/*tabel waar agenda word in opgeslagen*/
+#table2{
+    width:300px;
+}
+
+#table2 th{
+    text-align: left;
+    font-size: 20px;
+}
+
+#table2 th, #table2 td{
+    width: 30%;
+    border-bottom: 2px solid black;
+}
+
+#scrollagenda {
+    height: 175px;
+    width: 300px;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#tab th, #tab td{
+    width: 30%;
+    
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+#scrollagenda::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+#scrollagenda::-webkit-scrollbar-track {
+    background: black;
+}
+
+#scrollagenda::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 50%;
+}
+
+/*------------------------------------------------------------------*/
+/* EINDE VAN DE AGENDAUNCTIE                                        */
+/*------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------*/
 /* BEGIN VAN DE KLOK FUNCTIE                                        */
@@ -414,6 +497,10 @@ body {
 /* BEGIN VAN DE TodoLists FUNCTIE */
 /*------------------------------------------------------------------*/
 
+.todoList h1{
+    margin: 0px;
+}
+
 #input{
     color: white;
     border: solid 0.5px white;
@@ -434,7 +521,7 @@ body {
 #lijst{
     color: white;
 
-    height: 150px;
+    height: 175px;
     overflow-y: auto;               /*Maakt een scrollbar wanneer de maximale hoogte overschreden wordt*/
 }
 
@@ -485,8 +572,8 @@ body {
     border: 1px solid white;
     border-radius: 3px;
 
-    width: 49px;
-    height: 25px;
+    width: 70px;
+    height: 35px;
 }
 
 #keyboard input {
@@ -551,58 +638,3 @@ body {
 /*------------------------------------------------------------------*/
 /* EINDE VAN DE YOUTUBE FUNCTIE                                     */
 /*------------------------------------------------------------------*/
-
-/*------------------------------------------------------------------*/
-/* BEGIN VAN DE AGENDA FUNCTIE                                     */
-/*------------------------------------------------------------------*/
-
-#agenda h1{
-    margin: 0px;
-}
-
-#input_verbergen{
-    display: none;
-}
-
-#date, #agendatopic {
-    color: white;
-    border: solid 0.5px white;
-    width: 200px;
-    background-color: black;
-    border-radius: 5px;
-
-    margin-top: 5px;
-
-    overflow: hidden; 
-}
-
-.numberDate{
-    width: 30px;
-    
-}
-.numberDate , .agendatopic{
-   border: none; 
-
-}
-/*button input velden*/
-.topic_add{
-    color: white;
-    background-color: black;
-}
-
-/**************************************************************/
-/*tabel waar agenda word in opgeslagen*/
-table{
-  width:300px;
-}
-
-#tab th{
-    text-align: left;
-    font-size: 20px;
-}
-
-#tab th, td{
-    width: 99px;
-    border-bottom: 2px solid black;
-}
-
